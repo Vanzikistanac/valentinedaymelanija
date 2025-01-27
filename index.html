@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Valentine</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Chewy&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class = "content">
+            <div class = "naslov">
+                <h1 id = "h1Naslov">Will you be my Valentine?</h1>
+                <img src = "pics\please.gif" id = "please">
+            </div>
+            <div class = "buttons">
+                <button class="button-1" role="button" id = "yesButton">Yes</button>
+                <button class="button-1" id = "randomButton" role="button">No</button>
+            </div>
+            <p id="sadText">Nemoj da budes mean!</p>
+            <audio controls id="bajaga">
+                <source src = "pics\bajaga.mp3">
+            </audio>
+        </div>
+        <img src = "pics\smotan.gif" id = "smotanko">
+
+        <script>
+            const yesBtn = document.getElementById("yesButton");
+            const wrapper = document.querySelector('.content');
+            const noBtn = document.getElementById('randomButton');
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const noBtnRect = noBtn.getBoundingClientRect();
+            var counter = 0;
+            const text = ["...",
+                "Nemoj da budes mean!",
+                "Melanija...",
+                "E samo klikni Yes, nije tolko tesko",
+                "🙄",
+                "🙄🙄🙄🙄🙄🙄🙄",
+                "Ali Melanijaaaaa",
+                "the mean one",
+                "ne budi bezobraznaaa",
+                "akhm..."
+            ]
+            var flag = 0;
+            noBtn.addEventListener('mouseover', () => {
+                if (counter < 10){
+                    const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width) / 2) + 1;
+                    const j = Math.floor(Math.random() * (wrapperRect.height - noBtnRect.height) / 2) + 1;
+                    noBtn.style.left = i + 'px';
+                    noBtn.style.top = j + 'px';
+                    const paragraph = document.getElementById("sadText");
+                    if (flag == 0){
+                        flag = 1;
+                        paragraph.style.visibility = "visible";
+                    }
+                    paragraph.textContent = text[counter];
+                    counter++;
+                    if (counter == 10){
+                       noBtn.style.visibility = "hidden";
+                    }
+                }
+            });
+            yesBtn.addEventListener('click', () =>{
+                noBtn.style.visibility = "hidden";
+                yesBtn.style.visibility = 'hidden';
+                const paragraph = document.getElementById("sadText");
+                paragraph.textContent = "CYA ON 14 OF FEBRUARY YESSSS (bkvl nisi imala drugu opciju hehehehe)";
+                /*paragraph.style.visibility = 'hidden';*/
+                const naslov = document.getElementById("h1Naslov");
+                naslov.style.visibility = 'hidden';
+                const please = document.getElementById("please");
+                please.style.visibility = "hidden";
+                const smotanko = document.getElementById("smotanko");
+                smotanko.style.visibility = "visible"
+                const bajaga = document.getElementById("bajaga");
+                bajaga.style.visibility = "visible";
+                bajaga.play();
+            });
+          </script>
+    </body>
+</html>

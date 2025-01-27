@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+body{
+    
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF5E4;
+}
+
+.chewy-regular {
+    font-family: "Chewy", serif;
+    font-weight: 1;
+    
+}
+
+.content{
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFE3E1;
+    margin-top: 25%;
+    padding : 2% 2% 7% 2%;
+}
+
+#please{
+    width: 140px;
+    height: 140px;
+}
+
+.naslov{
+    display: grid;
+    grid-template-columns: auto auto;
+    /*background-color:blue;*/
+    padding-right: 5%;
+}
+
+h1{
+    font-size: 400%;
+    font-family: "Chewy";
+    display: flex;
+    text-align: center;
+    color: #F082AC;
+    line-height: 1.5;
+}
+
+/* CSS */
+.button-1 {
+  background-color: #FFD1D1;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 80px;
+  width: 130px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
+
+.buttons{
+    margin-top: 20%;
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 5%;
+}
+
+#sadText{
+    font-family: "Chewy";
+    color: #F082AC;
+    line-height: 1.5;
+    font-size: 200%;
+    text-align: center;
+    visibility: hidden;
+}
+
+#smotanko{
+    position: absolute;
+
+    visibility: hidden;
+}
+
+audio{
+    margin: auto;
+    visibility: hidden;
+}
